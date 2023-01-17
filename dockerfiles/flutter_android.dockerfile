@@ -60,7 +60,7 @@ RUN set -eux; \
     done
 
 # Create new clear layer
-FROM plugfox/flutter:${VERSION} as production
+FROM michaellazebny/flutter:${VERSION} as production
 
 ARG VERSION
 ARG ANDROID_SDK_TOOLS_VERSION
@@ -102,7 +102,7 @@ RUN set -eux; apk add --no-cache openjdk11-jdk \
 #RUN cd / && find / -xdev | sort > /tmp/after.txt
 
 # Add lables
-LABEL name="plugfox/flutter:${VERSION}-android" \
+LABEL name="michaellazebny/flutter:${VERSION}-android" \
     description="Alpine with flutter & dart for android" \
     flutter.channel="${VERSION}" \
     flutter.version="${VERSION}" \
